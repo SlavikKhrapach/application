@@ -18,6 +18,8 @@ img {
 
 .container {
     width: 1200px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 p {
@@ -44,3 +46,9 @@ button {
 .right {
     float: right;
 }
+
+.footer{
+    height: 100px;
+    background-color: #e6e6e6;
+}
+
