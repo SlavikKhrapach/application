@@ -1,0 +1,29 @@
+
+.main-block {
+    background-color: #f1f1f1;
+    padding: 30px;
+}
+
+.main-block h1{
+    text-align: center;
+
+}
+
+img {
+    border-radius: 5px;
+    right: 0;
+    float: right;
+    width: 550px;
+}
+
+.container {
+    width: 1200px;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+.team p{
+    margin: 0 20px;
+}
