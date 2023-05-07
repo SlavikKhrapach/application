@@ -52,3 +52,61 @@ button {
     background-color: #e6e6e6;
 }
 
+.side {
+    margin-top: 22px;
+    padding: 5px 15px;
+    float: right;
+}
+
+.note {
+    background-color: #dcdde0;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+.side button {
+    margin-top: 40px;
+}
+
+input {
+    padding: 0;
+    margin: 0;
+}
+
+p {
+    padding: 0;
+
+}
+
+label {
+    padding-left: 3px;
+    font-weight: bold;
+}
+
+
+
+.named-container {
+    width: 1200px;
+    display: grid;
+    grid-template-areas:
+        "fname lname note"
+        "email email note"
+        "state phone buttn";
+    grid-template-columns: repeat(3, 400px);
+    grid-template-rows: repeat(3, auto);
+    gap: 0;
+}
+
+input {
+    box-sizing: border-box;
+}
+
+.fname { grid-area: fname; }
+.lname { grid-area: lname; }
+.email { grid-area: email; }
+.state { grid-area: state; }
+.phone { grid-area: phone; }
+.note  { grid-area: note;  }
+.buttn { grid-area: buttn; }
+

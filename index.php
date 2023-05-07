@@ -1,3 +1,8 @@
+<!--
+Author: Slavik Khrapach
+Date: 4/22/2023
+Description: This file turns on error reporting, Fat-Free, and creates a view
+-->
 <?php
 
 //Turn on error reporting
@@ -13,9 +18,20 @@ $f3 = Base::instance();
 //Define a default route
 $f3->route('GET /', function() {
     $view = new Template();
+
+    //echo "<h1>TEST</h1>";
     echo $view->render('views/home.html');
-    }
-);
+});
+
+$f3->route('GET /personal', function() {
+
+    // Test
+    //echo "<h1>TEST</h1>";
+
+    // Display view page
+    $view = new Template();
+    echo $view->render('views/personalInfoForm.html');
+});
 
 //Run fat free
 $f3->run();
