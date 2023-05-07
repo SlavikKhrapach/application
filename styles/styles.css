@@ -1,7 +1,7 @@
 
 .main-block {
-    background-color: #f1f1f1;
-    padding: 30px;
+    background-color: #f7f7f7;
+    padding: 30px 5px;
 }
 
 .main-block h2{
@@ -22,8 +22,13 @@ img {
     padding-bottom: 20px;
 }
 
+#personalInfo {
+    margin: 10px;
+}
+
 p {
     font-size: 1.2em;
+    padding: 0;
 }
 
 .team p{
@@ -43,41 +48,40 @@ button {
     text-align: center;
 }
 
-.right {
-    float: right;
-}
-
 .footer{
     height: 100px;
     background-color: #e6e6e6;
 }
 
-.side {
-    margin-top: 22px;
-    padding: 5px 15px;
-    float: right;
+.side button {
+    width: 100%;
+    margin-left: -15px;
+}
+
+#email {
+
 }
 
 .note {
+    margin-top: 31px;
     background-color: #dcdde0;
-    padding: 10px 15px;
+    padding: 28px 20px 10px;
     border-radius: 5px;
-    font-size: 0.9em;
+    font-size: 0.81em;
+    margin-left: -15px;
+
+}
+
+hr {
+    border-top: 2px solid #dddbe7;
 }
 
 .side button {
-    margin-top: 40px;
+    margin-top: 48px;
+    width: 105%;
+    height: 37px;
 }
 
-input {
-    padding: 0;
-    margin: 0;
-}
-
-p {
-    padding: 0;
-
-}
 
 label {
     padding-left: 3px;
@@ -99,7 +103,9 @@ label {
 }
 
 input {
-    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    width: 100%;
 }
 
 .fname { grid-area: fname; }
