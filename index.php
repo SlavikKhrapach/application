@@ -53,5 +53,15 @@ $f3->route('GET /openings', function() {
     echo $view->render('views/openingsForm.html');
 });
 
+$f3->route('GET /summary', function() {
+
+    // Test
+    //echo "<h1>TEST</h1>";
+
+    // Display view page
+    $view = new Template();
+    echo $view->render('views/summary.html');
+});
+
 //Run fat free
 $f3->run();

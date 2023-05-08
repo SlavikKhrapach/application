@@ -1,62 +1,77 @@
 <include href="views/includes/header.html"></include>
 <body>
-<div class="container main-block">
-    <h1>Personal Information</h1>
-    <hr>
-
-    <!-- Using Bootstrap form -->
-    <form action="#" method="post" id="personalInfo">
-        <div class="row">
-            <div class="col-8">
-                <div class="form-row">
-                    <div class="form-group col-6">
-                        <label for="fname">First Name</label>
-                        <input type="text" class="form-control" name="fname" id="fname" value="" placeholder="Sarah">
-                    </div>
-                    <div class="form-group col-6">
-                        <label for="lname">Last Name</label>
-                        <input type="text" class="form-control" name="lname" id="lname" value="" placeholder="Smith">
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group col-12">
-                        <label for="email">Email</label>
-                        <input type="email" name="email" id="email" value="" class="form-control" placeholder="my_email@gmail.com">
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group col-6">
-                        <label for="state">State</label>
-                        <select id="state" name="state" class="form-control">
-                            <option value="Washington">Washington</option>
-                            <option value="Washington">Oregon</option>
-                            <option value="Washington">California</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-6">
-                        <label for="phone">Phone</label>
-                        <input type="number" name="phone" id="phone" value="" class="form-control" placeholder="222-333-4444">
-                    </div>
-                </div>
-
-
-            </div>
-
-            <div class="side col-4">
-                <div class="note">
-                    <p><b>Note:</b> All information entered is protected by our <b>privacy policy.</b> Profile information can only be viewed by others with your permission.</p>
-                </div>
-                <button onclick="window.location.href = 'experience'" class="right" type="button" >Next ></button>
-            </div>
+<div class="container">
+    
+    <div class="row header">
+        
+        <div class="col-6">
+            <h4>CodeCreate LLC</h4>
+            <br>
+            <h3>Software Development</h3>
+            <br>
+            <h5>Seattle Washington, Full-time, Remote/Office</h5>
+            <br>
         </div>
+    </div>
 
 
-
-    </form>
+    <div class="main-block">
+        <h1>Personal Information</h1>
+        <hr>
+    
+        <!-- Using Bootstrap form -->
+        <form action="#" method="post" id="personalInfo">
+            <div class="row">
+                <div class="col-8">
+                    <div class="form-row">
+                        <div class="form-group col-6">
+                            <label for="fname">First Name</label>
+                            <input type="text" class="form-control" name="fname" id="fname" value="" placeholder="Sarah">
+                        </div>
+                        <div class="form-group col-6">
+                            <label for="lname">Last Name</label>
+                            <input type="text" class="form-control" name="lname" id="lname" value="" placeholder="Smith">
+                        </div>
+                    </div>
+    
+                    <div class="form-row">
+                        <div class="form-group col-12">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" value="" class="form-control" placeholder="my_email@gmail.com">
+                        </div>
+                    </div>
+    
+                    <div class="form-row">
+                        <div class="form-group col-6">
+                            <label for="state">State</label>
+                            <select id="state" name="state" class="form-control">
+                                <option value="Washington">Washington</option>
+                                <option value="Washington">Oregon</option>
+                                <option value="Washington">California</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-6">
+                            <label for="phone">Phone</label>
+                            <input type="number" name="phone" id="phone" value="" class="form-control" placeholder="222-333-4444">
+                        </div>
+                    </div>
+    
+    
+                </div>
+    
+                <div class="side col-4">
+                    <div class="note">
+                        <p><b>Note:</b> All information entered is protected by our <b>privacy policy.</b> Profile information can only be viewed by others with your permission.</p>
+                    </div>
+                    <button onclick="window.location.href = 'experience'" class="right" type="button" >Next ></button>
+                </div>
+            </div>
+    
+    
+    
+        </form>
+    </div>
 </div>
-
 
 </body>
 </html>

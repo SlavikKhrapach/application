@@ -1,79 +1,95 @@
 <include href="views/includes/header.html"></include>
 <body>
-<div class="container main-block">
-    <h1>Experience</h1>
-    <hr>
-    <form action="#" method="post" id="personalInfo">
-        <div class="row">
-            <div class="col-8">
-                <div class="from-group col-12">
-                    <label for="biography">Biography</label>
-                    <textarea name="biography" class="form-control" id="biography" rows="8"></textarea>
-                </div>
-            </div>
-            <div class="col-4 side">
-                <div class="form-row">
-                    <div class="form-group col-12">
-                        <label for="gitLink">Github Link</label>
-                        <input type="text" name="gitLink" id="gitLink" value="" class="form-control" placeholder="github.com/my_github">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-12">
-                        <label class="col-12">Years Experience</label>
-                        <div class="col-12 options-row">
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="years-experience" id="experience-0-2" value="0-2">
-                                <label class="form-check-label" for="experience-0-2">
-                                    0-2
-                                </label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="years-experience" id="experience-2-4" value="2-4">
-                                <label class="form-check-label" for="experience-2-4">
-                                    2-4
-                                </label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="years-experience" id="experience-4" value="4+">
-                                <label class="form-check-label" for="experience-4">
-                                    4+
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-group col-12">
-                        <label class="col-12">Willing To Relocate</label>
-                        <div class="col-12 options-row">
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="relocate" id="relocate-yes" value="yes">
-                                <label class="form-check-label" for="relocate-yes">
-                                    Yes
-                                </label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input radio-align" type="radio" name="years-experience" id="relocate-no" value="no">
-                                <label class="form-check-label" for="relocate-no">
-                                    No
-                                </label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="years-experience" id="relocate-maybe" value="maybe">
-                                <label class="form-check-label" for="relocate-maybe">
-                                    Maybe
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <button onclick="window.location.href = 'openings'" class="toMailing" type="button" >Next ></button>
-            </div>
-        </div>
-    </form>
 
+<div class="container">
+    
+    <div class="row header">
+        
+        <div class="col-6">
+            <h4>CodeCreate LLC</h4>
+            <br>
+            <h3>Software Development</h3>
+            <br>
+            <h5>Seattle Washington, Full-time, Remote/Office</h5>
+            <br>
+        </div>
+    </div>
+
+    <div class="main-block">
+        <h1>Experience</h1>
+        <hr>
+        <form action="#" method="post" id="personalInfo">
+            <div class="row experience">
+                <div class="col-8">
+                    <div class="from-group col-12">
+                        <label for="biography">Biography</label>
+                        <textarea name="biography" class="form-control" id="biography" rows="8"></textarea>
+                    </div>
+                </div>
+                <div class="col-4 side">
+                    <div class="form-row">
+                        <div class="form-group col-12">
+                            <label for="gitLink">Github Link</label>
+                            <input type="text" name="gitLink" id="gitLink" value="" class="form-control" placeholder="github.com/my_github">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-12">
+                            <label class="col-12">Years Experience</label>
+                            <div class="col-12 options-row">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="years-experience" id="experience-0-2" value="0-2">
+                                    <label class="form-check-label" for="experience-0-2">
+                                        0-2
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="years-experience" id="experience-2-4" value="2-4">
+                                    <label class="form-check-label" for="experience-2-4">
+                                        2-4
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="years-experience" id="experience-4" value="4+">
+                                    <label class="form-check-label" for="experience-4">
+                                        4+
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group col-12">
+                            <label class="col-12">Willing To Relocate</label>
+                            <div class="col-12 options-row">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="relocate" id="relocate-yes" value="yes">
+                                    <label class="form-check-label" for="relocate-yes">
+                                        Yes
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input radio-align" type="radio" name="years-experience" id="relocate-no" value="no">
+                                    <label class="form-check-label" for="relocate-no">
+                                        No
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="years-experience" id="relocate-maybe" value="maybe">
+                                    <label class="form-check-label" for="relocate-maybe">
+                                        Maybe
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="window.location.href = 'openings'" class="toMailing" type="button" >Next ></button>
+                </div>
+            </div>
+        </form>
+    
+    </div>
 </div>
 </body>
 </html>
