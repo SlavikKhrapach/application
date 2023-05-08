@@ -1,7 +1,7 @@
 
 .main-block {
     background-color: #f7f7f7;
-    padding: 30px 5px;
+    padding: 30px 15px;
 }
 
 .main-block h2{
@@ -10,16 +10,29 @@
 }
 
 img {
-    border-radius: 5px;
+    border-radius: 4px;
     right: 0;
     float: right;
     width: 600px;
 }
 
+.col-7, .col-6, .col-4, .col-8, .col-12 {
+    padding: 0;
+    margin: 0;
+}
+
+.options-row {
+    white-space: nowrap;
+}
+
+input[type="radio"] {
+
+    vertical-align: middle;
+}
+
 .container {
     width: 1200px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 20px;
 }
 
 #personalInfo {
@@ -37,7 +50,7 @@ p {
 
 button {
     background-color: #91c543;
-    border-radius: 5px;
+    border-radius: 4px;
     border: #91c543;
     font-weight: bold;
     color: #f1f1f1;
@@ -48,71 +61,62 @@ button {
     text-align: center;
 }
 
+.right {
+    float: right;
+}
+
 .footer{
     height: 100px;
     background-color: #e6e6e6;
 }
 
-.side button {
-    width: 100%;
-    margin-left: -15px;
-}
-
-#email {
-
-}
-
 .note {
-    margin-top: 31px;
+    margin-top: 32px;
     background-color: #dcdde0;
-    padding: 28px 20px 10px;
-    border-radius: 5px;
-    font-size: 0.81em;
-    margin-left: -15px;
+    padding: 20px;
+    border-radius: 4px;
+    border: 1px solid #ccd2d8;
+    font-size: 0.8em;
+    height: 118px;
+}
 
+.side .toMailing {
+    margin-top: 16px;
+}
+
+.side {
+    padding-left: 10px
+}
+
+.side button {
+    margin-top: 42px;
+    width: 100%;
+    height: 37px;
 }
 
 hr {
     border-top: 2px solid #dddbe7;
+    width: 100%;
 }
 
-.side button {
-    margin-top: 48px;
-    width: 105%;
-    height: 37px;
+textarea {
+    resize: none;
+    margin-right: 10px;
+}
+
+.form-check label {
+    font-weight: normal;
 }
 
 
 label {
     padding-left: 3px;
     font-weight: bold;
-}
-
-
-
-.named-container {
-    width: 1200px;
-    display: grid;
-    grid-template-areas:
-        "fname lname note"
-        "email email note"
-        "state phone buttn";
-    grid-template-columns: repeat(3, 400px);
-    grid-template-rows: repeat(3, auto);
-    gap: 0;
+    margin-top: -12px !important;
 }
 
 input {
     padding: 0;
-    margin: 0;
+    margin: 0 0 10px;
     width: 100%;
 }
-
-.fname { grid-area: fname; }
-.lname { grid-area: lname; }
-.email { grid-area: email; }
-.state { grid-area: state; }
-.phone { grid-area: phone; }
-.note  { grid-area: note;  }
-.buttn { grid-area: buttn; }
-

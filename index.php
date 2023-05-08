@@ -33,5 +33,15 @@ $f3->route('GET /personal', function() {
     echo $view->render('views/personalInfoForm.html');
 });
 
+$f3->route('GET /experience', function() {
+
+    // Test
+    //echo "<h1>TEST</h1>";
+
+    // Display view page
+    $view = new Template();
+    echo $view->render('views/experienceForm.html');
+});
+
 //Run fat free
 $f3->run();
