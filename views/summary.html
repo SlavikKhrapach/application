@@ -9,9 +9,9 @@
     <div class="row header">
         
         <div class="col-6">
-            <h4>CodeCreate LLC</h4>
+            <h4><a href="/328/application">CodeCreate LLC</a></h4>
             <br>
-            <h3>Software Development</h3>
+            <h3><a href="/328/application">Software Development</a></h3>
             <br>
             <h5>Seattle Washington, Full-time, Remote/Office</h5>
             <br>
@@ -23,21 +23,21 @@
         <div class="row">
             <div class="col-6">
                 <ul id="summaryTable">
-                    <li>Name: </li>
+                    <li>Name: {{ @SESSION.fname }} {{ @SESSION.lname }}</li>
                     <hr>
-                    <li>Email: </li>
+                    <li>Email: {{ @SESSION.email }}</li>
                     <hr>
-                    <li>State: </li>
+                    <li>State: {{ @SESSION.state }}</li>
                     <hr>
-                    <li>Phone: </li>
+                    <li>Phone: {{ @SESSION.phone }}</li>
                     <hr>
-                    <li>Github Link: </li>
+                    <li>Github Link: {{ @SESSION.git }}</li>
                     <hr>
-                    <li>Experience: </li>
+                    <li>Experience: {{ @SESSION.yrExp }} years</li>
                     <hr>
-                    <li>Willing To Relocate: </li>
+                    <li>Willing To Relocate: {{ @SESSION.relocate }}</li>
                     <hr>
-                    <li>Mailing Lists: </li>
+                    <li>Mailing Lists: {{ @SESSION.sdj }}, {{ @SESSION.indV }}</li>
                 </ul>
             </div>
             <div class="col-6">
@@ -46,14 +46,14 @@
         </div>
         <div class="row">
             <div class="col-6"></div>
-            <div class="sol-6">
-                <h2>Summary</h2>
-                <p></p>
+            <div class="col-6">
+                <h3>Summary</h3>
+                <p>{{ @SESSION.bio }}</p>
             </div>
         </div>
         <div class="row">
             
-            <button onclick="window.location.href = 'personal'" class="submit" type="button" >Submit My Application!</button>
+            <button class="submit" type="button" >Submit My Application!</button>
         </div>
     </div>
 </div>
