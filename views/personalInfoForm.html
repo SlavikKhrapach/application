@@ -25,18 +25,30 @@
                 <div class="col-8">
                     <div class="form-row">
                         <div class="form-group col-6">
-                            <label for="fname">First Name</label>
+                            <label for="fname">First Name
+                                <check if="{{ isset(@errors['fname']) }}">
+                                    <span class="err">{{ @errors['fname'] }}</span>
+                                </check>
+                            </label>
                             <input type="text" class="form-control" name="fname" id="fname" value="" placeholder="Sarah">
                         </div>
                         <div class="form-group col-6">
-                            <label for="lname">Last Name</label>
+                            <label for="lname">Last Name
+                                <check if="{{ isset(@errors['lname']) }}">
+                                    <span class="err">{{ @errors['lname'] }}</span>
+                                </check>
+                            </label>
                             <input type="text" class="form-control" name="lname" id="lname" value="" placeholder="Smith">
                         </div>
                     </div>
     
                     <div class="form-row">
                         <div class="form-group col-12">
-                            <label for="email">Email</label>
+                            <label for="email">Email
+                                <check if="{{ isset(@errors['email']) }}">
+                                    <span class="err">{{ @errors['email'] }}</span>
+                                </check>
+                            </label>
                             <input type="email" name="email" id="email" value="" class="form-control" placeholder="my_email@gmail.com">
                         </div>
                     </div>
@@ -51,8 +63,16 @@
                             </select>
                         </div>
                         <div class="form-group col-6">
-                            <label for="phone">Phone</label>
-                            <input type="number" name="phone" id="phone" value="" class="form-control" placeholder="222-333-4444">
+                            <label for="phone">Phone
+                                <check if="{{ isset(@errors['phone']) }}">
+                                    <span class="err">{{ @errors['phone'] }}</span>
+                                </check>
+                            </label>
+                            <input type="number"
+                                   name="phone"
+                                   id="phone"
+                                   class="form-control"
+                                   placeholder="2223334444">
                         </div>
                     </div>
     

@@ -206,4 +206,8 @@ label[for="gitLink"] {
     border-radius: 4px;
 }
 
+.err {
+    color: red;
+}
+
 
