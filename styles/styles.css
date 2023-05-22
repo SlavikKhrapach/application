@@ -179,6 +179,7 @@ input[type="checkbox"] {
 
 .indVert, .sdevJobs{
     margin-left: 20px;
+    height: 100px;
 }
 
 label {
@@ -209,5 +210,3 @@ label[for="gitLink"] {
 .err {
     color: red;
 }
-
-

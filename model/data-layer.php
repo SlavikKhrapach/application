@@ -6,11 +6,11 @@ function getExperience() {
 }
 
 function getJobs() {
-    $jobs = array("Javascript", "HTML", "PHP", "CSS", "Java", "ReactJS", "Python", "NodeJs");
+    $jobs = array("Javascript", "PHP", "Java", "Python", "HTML", "CSS", "ReactJS", "NodeJs");
     return $jobs;
 }
 
 function getVerticals() {
-    $verticals = array("Saas", "Industrial tech", "Health tech", "Cybersecurity", "Ag tech", "HR tech");
+    $verticals = array("Saas", "Health tech", "Ag tech"," HR tech", "Industrial tech", "Cybersecurity");
     return $verticals;
 }

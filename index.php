@@ -150,23 +150,45 @@ $f3->route('GET|POST /experience', function($f3) {
 
 $f3->route('GET|POST /openings', function($f3) {
 
+    $selectedSDJ = array();
+    $selectedIndV = array();
+
     // If the form is posted
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
         // Get data
-        $sdj = implode(", ", $_POST['sdj']);
-        $indV = implode(", ", $_POST['indV']);
+        if (!empty($_POST['sdj'])) {
+            $selectedSDJ = $_POST['sdj'];
 
+            if(validSelectionsJobs($selectedSDJ)) {
+                $f3->set('SESSION.sdj', implode(", ", $selectedSDJ));
+            } else {
+                $f3->set('errors["sdj"]', 'Go away, evildoer!');
+            }
+        }
 
+        if (!empty($_POST['indV'])) {
+            $selectedIndV = $_POST['indV'];
 
-        // Store data in the session array
-        $f3->set('SESSION.sdj', $sdj);
-        $f3->set('SESSION.indV', $indV);
+            if(validSelectionsVerticals($selectedIndV)) {
+                $f3->set('SESSION.indV', implode(", ", $selectedIndV));
+            } else {
+                $f3->set('errors["indV"]', 'Go away, evildoer!');
+            }
+        }
 
 
         // Redirect to openings form page
-        $f3->reroute('summary');
+        if (empty($f3->get('errors'))) {
+            $f3->reroute('summary');
+        }
+
     }
+
+    // Get the data from the model and add to hive
+    $f3->set('jobs', getJobs());
+    $f3->set('verticals', getVerticals());
+
     // Display view page
     $view = new Template();
     echo $view->render('views/openingsForm.html');

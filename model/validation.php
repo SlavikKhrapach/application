@@ -21,10 +21,26 @@ function validEmail($email) {
     return filter_var($email, FILTER_VALIDATE_EMAIL);
 }
 
-function validSelectionsJobs() {
+function validSelectionsVerticals($userVerticals) {
+    $validVerticals = getVerticals();
 
+    //Check each user condiment against array of valid condiments
+    foreach ($userVerticals as $userVertical) {
+        if (!in_array($userVertical, $validVerticals)) {
+            return false;
+        }
+    }
+    return true;
 }
 
-function validSelectionsVerticals() {
+function validSelectionsJobs($userJobs) {
+    $validJobs = getJobs();
 
+    //Check each user condiment against array of valid condiments
+    foreach ($userJobs as $userJob) {
+        if (!in_array($userJob, $validJobs)) {
+            return false;
+        }
+    }
+    return true;
 }

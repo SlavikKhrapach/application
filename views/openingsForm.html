@@ -21,128 +21,50 @@
         <hr>
         <form action="#" method="post" id="openings">
             
-            <label>Software Development Jobs</label>
-            <div class="row" id="sdevJobs">
-                <div class="col-3">
-                    <div class="form-check">
-                        <label> <input class="form-check-input"
-                                       type="checkbox"
-                                       name="sdj[]"
-                                       value="JavaScript"
-                        > JavaScript </label>
+            <label>Software Development Jobs
+                <check if="{{ isset(@errors['sdj']) }}">
+                    <span class="err">{{ @errors['sdj'] }}</span>
+                </check>
+            </label>
+            
+            <div class="row">
+                <repeat group="{{ @jobs }}" value="{{ @job }}">
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                            <input class="form-check-input"
+                                   value="{{ @job }}"
+                                   type="checkbox"
+                                   id="{{ @job }}"
+                                   name="sdj[]"
+                            >{{ @job }}
+                            </label>
+                        </div>
                     </div>
-                    <div class="form-check">
-                        
-                        <label><input class="form-check-input"
-                                      type="checkbox"
-                                      name="sdj[]"
-                                      value="HTML"
-                        > HTML </label>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="form-check">
-                        <label><input class="form-check-input"
-                                      type="checkbox"
-                                      name="sdj[]"
-                                      value="PHP"
-                        > PHP </label>
-                    </div>
-                    <div class="form-check">
-                        <label><input class="form-check-input"
-                                      type="checkbox"
-                                      name="sdj[]"
-                                      value="CSS"
-                        > CSS </label>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="form-check">
-                        <label><input class="form-check-input"
-                                      type="checkbox"
-                                      name="sdj[]"
-                                      value="Java"
-                        > Java </label>
-                    </div>
-                    <div class="form-check">
-                        <label><input class="form-check-input"
-                                      type="checkbox"
-                                      name="sdj[]"
-                                      value="ReactJS"
-                        > ReactJS </label>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="form-check">
-                        <label><input class="form-check-input"
-                                      type="checkbox"
-                                      name="sdj[]"
-                                      value="Python"
-                        > Python </label>
-                    </div>
-                    <div class="form-check">
-                        <label><input class="form-check-input"
-                                      type="checkbox"
-                                      name="sdj[]"
-                                      value="NodeJs"
-                        > NodeJs </label>
-                    </div>
-                </div>
+                </repeat>
             </div>
             
-            <label>Industry Verticals</label>
-            <div class="row" id="indVert">
-                <div class="col-3">
-                    <div class="form-check">
-                        <label><input class="form-check-input"
-                                      type="checkbox"
-                                      name="indV[]"
-                                      value="Saas"
-                        > Saas </label>
-                    </div>
-                    <div class="form-check">
-                        <label><input class="form-check-input"
-                                      type="checkbox"
-                                      name="indV[]"
-                                      value="Industrial tech"
-                        > Industrial tech </label>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="form-check">
-                        <label><input class="form-check-input"
+            <label>Industry Verticals
+                <check if="{{ isset(@errors['indV']) }}">
+                    <span class="err">{{ @errors['indV'] }}</span>
+                </check>
+            </label>
+            <div class="row">
+                <repeat group="{{ @verticals }}" value="{{ @vertical }}">
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                            <input class="form-check-input"
+                                   value="{{ @vertical }}"
                                    type="checkbox"
+                                   id="{{ @vertical }}"
                                    name="indV[]"
-                                   value="Health tech"
-                        > Health tech </label>
+                            >{{ @vertical }}</label>
+                        </div>
                     </div>
-                    <div class="form-check">
-                        <label><input class="form-check-input"
-                                      type="checkbox"
-                                      name="indV[]"
-                                      value="Cybersecurity"
-                        > Cybersecurity </label>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="form-check">
-                        <label><input class="form-check-input"
-                                      type="checkbox"
-                                      name="indV[]"
-                                      value="Ag tech"
-                        > Ag tech </label>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="form-check">
-                        <label><input class="form-check-input"
-                               type="checkbox"
-                               name="indV[]"
-                               value="HR tech"
-                        > HR tech </label>
-                    </div>
-                </div>
+                </repeat>
             </div>
+            
             <div class="row">
                 <div class="col-12">
                     <button class="toSummary" type="submit">Next ></button>
