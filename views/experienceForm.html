@@ -49,14 +49,14 @@
                             
                                 <repeat group="{{ @experience }}" value="{{ @exp }}">
                                     <div class="form-check form-check-inline">
-                                        <label class="form-check-label"></label>
+                                        
                                         <input class="form-check-input"
                                                type="radio"
                                                name="years-experience"
                                                id="{{ @exp }}"
                                                value="{{ @exp }}"
-                                        > {{ @exp }}
-                                        </label>
+                                        >
+                                        <label class="form-check-label" for="{{ @exp }}">{{ @exp }}</label>
                                     </div>
                                 </repeat>
                             
@@ -68,24 +68,20 @@
                         <div class="form-group col-12">
                             <label class="col-12">Willing To Relocate</label>
                             <div class="col-12 options-row">
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="relocate" id="relocate-yes" value="yes">
-                                    <label class="form-check-label" for="relocate-yes">
-                                        Yes
-                                    </label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input radio-align" type="radio" name="relocate" id="relocate-no" value="no">
-                                    <label class="form-check-label" for="relocate-no">
-                                        No
-                                    </label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="relocate" id="relocate-maybe" checked="checked" value="maybe">
-                                    <label class="form-check-label" for="relocate-maybe">
-                                        Maybe
-                                    </label>
-                                </div>
+                                
+                                <repeat group="{{ @relocateOptions }}" value="{{ @relocateOption }}">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input"
+                                               type="radio"
+                                               name="relocate"
+                                               id="{{ @relocateOption }}"
+                                               value="{{ @relocateOption }}"
+                                               checked="checked"
+                                        >
+                                            <label class="form-check-label" for="{{ @relocateOption }}">{{ @relocateOption }}</label>
+                                    </div>
+                                </repeat>
+                                <br>
                             </div>
                         </div>
                     </div>

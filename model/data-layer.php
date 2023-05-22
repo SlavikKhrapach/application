@@ -5,6 +5,11 @@ function getExperience() {
     return $experience;
 }
 
+function getRelocateOptions() {
+    $options = array("Yes", "No", "Maybe");
+    return $options;
+}
+
 function getJobs() {
     $jobs = array("Javascript", "PHP", "Java", "Python", "HTML", "CSS", "ReactJS", "NodeJs");
     return $jobs;

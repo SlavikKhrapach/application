@@ -142,6 +142,7 @@ $f3->route('GET|POST /experience', function($f3) {
 
     // Get the data from the model and add to hive
     $f3->set('experience', getExperience());
+    $f3->set('relocateOptions', getRelocateOptions());
 
     // Display view page
     $view = new Template();
