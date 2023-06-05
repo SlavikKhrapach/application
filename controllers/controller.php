@@ -48,25 +48,25 @@ class Controller
             }
 
             // Store data in the session array
-            if (validName($fname)) {
+            if (Validate::validName($fname)) {
                 $f3->set('SESSION.fname', $fname);
             } else {
                 $f3->set('errors["fname"]', 'invalid, try again');
             }
 
-            if (validName($lname)) {
+            if (Validate::validName($lname)) {
                 $f3->set('SESSION.lname', $lname);
             } else {
                 $f3->set('errors["lname"]', 'invalid, try again');
             }
 
-            if (validEmail($email)) {
+            if (Validate::validEmail($email)) {
                 $f3->set('SESSION.email', $email);
             } else {
                 $f3->set('errors["email"]', 'invalid, try again');
             }
 
-            if (validPhone($phone)) {
+            if (Validate::validPhone($phone)) {
                 $f3->set('SESSION.phone', $phone);
             } else {
                 $f3->set('errors["phone"]', 'invalid, try again');
@@ -107,13 +107,13 @@ class Controller
 
 
             // Store data in the session array
-            if (validExperience($userExp)) {
+            if (Validate::validExperience($userExp)) {
                 $f3->set('SESSION.yrExp', $userExp);
             } else {
                 $f3->set('errors["yrExp"]', 'invalid, try again');
             }
 
-            if (validGithub($git)) {
+            if (Validate::validGithub($git)) {
                 $f3->set('SESSION.git', $git);
             } else {
                 $f3->set('errors["git"]', 'invalid, try again');
@@ -150,7 +150,7 @@ class Controller
             if (!empty($_POST['sdj'])) {
                 $selectedSDJ = $_POST['sdj'];
 
-                if(validSelectionsJobs($selectedSDJ)) {
+                if(Validate::validSelectionsJobs($selectedSDJ)) {
                     $f3->set('SESSION.sdj', implode(", ", $selectedSDJ));
                 } else {
                     $f3->set('errors["sdj"]', 'Go away, evildoer!');
@@ -160,7 +160,7 @@ class Controller
             if (!empty($_POST['indV'])) {
                 $selectedIndV = $_POST['indV'];
 
-                if(validSelectionsVerticals($selectedIndV)) {
+                if(Validate::validSelectionsVerticals($selectedIndV)) {
                     $f3->set('SESSION.indV', implode(", ", $selectedIndV));
                 } else {
                     $f3->set('errors["indV"]', 'Go away, evildoer!');
