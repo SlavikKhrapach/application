@@ -22,6 +22,7 @@ class Controller
         $email = "";
         $state = "";
         $phone = "";
+        $mailing = "No";
 
         // If the form has been posted
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
@@ -45,6 +46,10 @@ class Controller
 
             if (isset($_POST['phone'])) {
                 $phone = $_POST['phone'];
+            }
+
+            if (isset($_POST['mailing'])) {
+                $mailing = $_POST['mailing'];
             }
 
             // Store data in the session array
@@ -73,6 +78,7 @@ class Controller
             }
 
             $f3->set('SESSION.state', $state);
+            $f3->set('SESSION.mailing', $mailing);
 
             // Redirect to experience form page
             if (empty($f3->get('errors'))) {
@@ -125,7 +131,11 @@ class Controller
 
             // Redirect to openings form page
             if (empty($f3->get('errors'))) {
-                $f3->reroute('openings');
+                if ($f3->get('SESSION.mailing') == 'optIn') {
+                    $f3->reroute('openings');
+                } else {
+                    $f3->reroute('summary');
+                }
             }
         }
 
@@ -140,8 +150,10 @@ class Controller
 
     function openings($f3)
     {
-        $selectedSDJ = array();
+
         $selectedIndV = array();
+        $selectedSDJ = array();
+
 
         // If the form is posted
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
@@ -155,6 +167,8 @@ class Controller
                 } else {
                     $f3->set('errors["sdj"]', 'Go away, evildoer!');
                 }
+            } else {
+                $f3->set('SESSION.sdj', null);
             }
 
             if (!empty($_POST['indV'])) {
@@ -165,6 +179,8 @@ class Controller
                 } else {
                     $f3->set('errors["indV"]', 'Go away, evildoer!');
                 }
+            } else {
+                $f3->set('SESSION.indV', '');
             }
 
 
@@ -172,6 +188,9 @@ class Controller
             if (empty($f3->get('errors'))) {
                 $f3->reroute('summary');
             }
+
+            $f3->clear('SESSION.sdj');
+            $f3->clear('SESSION.indV');
 
         }
 
@@ -184,7 +203,7 @@ class Controller
         echo $view->render('views/openingsForm.html');
     }
 
-    function summary()
+    function summary($f3)
     {
         // Display a view page
         $view = new Template();
