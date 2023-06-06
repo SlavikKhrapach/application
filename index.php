@@ -22,7 +22,7 @@ require_once('controllers/controller.php');
 $f3 = Base::instance();
 
 //Create an instance of the Controller class
-$controller = new Controller();
+$controller = new Controller($f3);
 
 //Define a default route
 $f3->route('GET /', [$controller, 'home']);

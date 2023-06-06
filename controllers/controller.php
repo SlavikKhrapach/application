@@ -1,9 +1,18 @@
 <?php
 
-require_once('model/validation.php');
+require_once 'classes/applicant.php';
+require_once 'classes/Applicant_SubscribedToLists.php';
+
 
 class Controller
 {
+
+    private $_f3;
+
+    function __construct($f3)
+    {
+        $this->_f3 = $f3;
+    }
 
 
     //F3 object
@@ -52,36 +61,40 @@ class Controller
                 $mailing = $_POST['mailing'];
             }
 
+            $newApplicant = new Applicant();
+
             // Store data in the session array
             if (Validate::validName($fname)) {
-                $f3->set('SESSION.fname', $fname);
+                $newApplicant->setFName($fname);
             } else {
-                $f3->set('errors["fname"]', 'invalid, try again');
+                $this->_f3->set('errors["fname"]', 'invalid, try again');
             }
 
             if (Validate::validName($lname)) {
-                $f3->set('SESSION.lname', $lname);
+                $newApplicant->setLName($lname);
             } else {
-                $f3->set('errors["lname"]', 'invalid, try again');
+                $this->_f3->set('errors["lname"]', 'invalid, try again');
             }
 
             if (Validate::validEmail($email)) {
-                $f3->set('SESSION.email', $email);
+                $newApplicant->setEmail($email);
             } else {
-                $f3->set('errors["email"]', 'invalid, try again');
+                $this->_f3->set('errors["email"]', 'invalid, try again');
             }
 
             if (Validate::validPhone($phone)) {
-                $f3->set('SESSION.phone', $phone);
+                $newApplicant->setPhone($phone);
             } else {
-                $f3->set('errors["phone"]', 'invalid, try again');
+                $this->_f3->set('errors["phone"]', 'invalid, try again');
             }
 
-            $f3->set('SESSION.state', $state);
+            $newApplicant->setState($state);
             $f3->set('SESSION.mailing', $mailing);
 
             // Redirect to experience form page
-            if (empty($f3->get('errors'))) {
+            if (empty($this->_f3->get('errors'))) {
+
+                $this->_f3->set('SESSION.applicant', $newApplicant);
                 $f3->reroute('experience');
             }
         }
@@ -112,25 +125,25 @@ class Controller
             $relocate = $_POST['relocate'];
 
 
+
             // Store data in the session array
             if (Validate::validExperience($userExp)) {
-                $f3->set('SESSION.yrExp', $userExp);
+                $f3->get('SESSION.applicant')->setExperience($userExp);
             } else {
-                $f3->set('errors["yrExp"]', 'invalid, try again');
+                $this->_f3->set('errors["yrExp"]', 'invalid, try again');
             }
 
             if (Validate::validGithub($git)) {
-                $f3->set('SESSION.git', $git);
+                $f3->get('SESSION.applicant')->setGitLink($git);
             } else {
-                $f3->set('errors["git"]', 'invalid, try again');
+                $this->_f3->set('errors["git"]', 'invalid, try again');
             }
 
-            $f3->set('SESSION.bio', $bio);
-            $f3->set('SESSION.relocate', $relocate);
-
+            $f3->get('SESSION.applicant')->setBio($bio);
+            $f3->get('SESSION.applicant')->setRelocate($relocate);
 
             // Redirect to openings form page
-            if (empty($f3->get('errors'))) {
+            if (empty($this->_f3->get('errors'))) {
                 if ($f3->get('SESSION.mailing') == 'optIn') {
                     $f3->reroute('openings');
                 } else {
@@ -154,6 +167,8 @@ class Controller
         $selectedIndV = array();
         $selectedSDJ = array();
 
+        $applicantSubscription = new Applicant_SubscribedToLists();
+
 
         // If the form is posted
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
@@ -163,29 +178,30 @@ class Controller
                 $selectedSDJ = $_POST['sdj'];
 
                 if(Validate::validSelectionsJobs($selectedSDJ)) {
-                    $f3->set('SESSION.sdj', implode(", ", $selectedSDJ));
+                    $applicantSubscription->setSelectionsJobs(implode(", ", $selectedSDJ));
                 } else {
-                    $f3->set('errors["sdj"]', 'Go away, evildoer!');
+                    $this->_f3->set('errors["sdj"]', 'Go away, evildoer!');
                 }
             } else {
-                $f3->set('SESSION.sdj', null);
+                $applicantSubscription->setSelectionsJobs("");
             }
 
             if (!empty($_POST['indV'])) {
                 $selectedIndV = $_POST['indV'];
 
                 if(Validate::validSelectionsVerticals($selectedIndV)) {
-                    $f3->set('SESSION.indV', implode(", ", $selectedIndV));
+                    $applicantSubscription->setSelectionsVerticals(implode(", ", $selectedIndV));
                 } else {
-                    $f3->set('errors["indV"]', 'Go away, evildoer!');
+                    $this->_f3->set('errors["indV"]', 'Go away, evildoer!');
                 }
             } else {
-                $f3->set('SESSION.indV', '');
+                $applicantSubscription->setSelectionsVerticals("");
             }
 
 
             // Redirect to openings form page
-            if (empty($f3->get('errors'))) {
+            if (empty($this->_f3->get('errors'))) {
+                $this->_f3->set('SESSION.applicantSubscription', $applicantSubscription);
                 $f3->reroute('summary');
             }
 

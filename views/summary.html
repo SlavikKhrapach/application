@@ -21,22 +21,22 @@
         <div class="row">
             <div class="col-6">
                 <ul id="summaryTable">
-                    <li>Name: {{ @SESSION.fname }} {{ @SESSION.lname }}</li>
+                    <li>Name: {{ @SESSION.applicant->getFName() }} {{ @SESSION.applicant->getLName() }}</li>
                     <hr>
-                    <li>Email: {{ @SESSION.email }}</li>
+                    <li>Email: {{ @SESSION.applicant->getEmail() }}</li>
                     <hr>
-                    <li>State: {{ @SESSION.state }}</li>
+                    <li>State: {{ @SESSION.applicant->getState() }}</li>
                     <hr>
-                    <li>Phone: {{ @SESSION.phone }}</li>
+                    <li>Phone: {{ @SESSION.applicant->getPhone() }}</li>
                     <hr>
-                    <li>Github Link: {{ @SESSION.git }}</li>
+                    <li>Github Link: {{ @SESSION.applicant->getGitLink() }}</li>
                     <hr>
-                    <li>Experience: {{ @SESSION.yrExp }} years</li>
+                    <li>Experience: {{ @SESSION.applicant->getExperience() }} years</li>
                     <hr>
-                    <li>Willing To Relocate: {{ @SESSION.relocate }}</li>
+                    <li>Willing To Relocate: {{ @SESSION.applicant->getRelocate() }}</li>
                     <check if="{{ @SESSION.mailing == 'optIn' }}">
                     <hr>
-                    <li>Mailing Lists: {{ @SESSION.sdj }}, {{ @SESSION.indV }}</li>
+                    <li>Mailing Lists: {{ @SESSION.applicantSubscription->getSelectionsJobs() }}, {{ @SESSION.applicantSubscription->getSelectionsVerticals() }}</li>
                     </check>
                 </ul>
             </div>
@@ -48,7 +48,7 @@
             <div class="col-6"></div>
             <div class="col-6">
                 <h3>Summary</h3>
-                <p>{{ @SESSION.bio }}</p>
+                <p>{{ @SESSION.applicant->getBio() }}</p>
             </div>
         </div>
         <div class="row">
